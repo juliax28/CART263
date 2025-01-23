@@ -48,15 +48,15 @@ function draw() {
   fill(255);
 
   //2: output
-  //text(`items in array : ${multipleXPositions}`,100,height/2)
+  text(`items in array : ${multipleXPositions}`,100,height/2)
 
   //2: length
-  // text(`length of array: ${multipleXPositions.length}`,100,height/2+100)
+  text(`length of array: ${multipleXPositions.length}`,100,height/2+100)
 
   //2: use for loop to access::
-  // for(let i=0; i< multipleXPositions.length;i++){
-  //     text(`${multipleXPositions[i]}`,100+i*100,height/2+200)
-  // }
+  for(let i=0; i< multipleXPositions.length;i++){
+      text(`${multipleXPositions[i]}`,100+i*100,height/2+200)
+  }
 
   //3:: use a for loop to access the mousePositions array and draw a circle at each position
   // for(let i=0; i< mousePositions.length;i++){
