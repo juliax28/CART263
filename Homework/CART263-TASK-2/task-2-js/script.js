@@ -187,8 +187,6 @@ function createNewDrawingPoint(mouseX, mouseY) {
 
  }
 
-
-
  }
 
   /*C:: SHAPE BUTTON ********************************************/
@@ -210,13 +208,13 @@ function createNewDrawingPoint(mouseX, mouseY) {
    let pTag = document.querySelector(`#${this.id} p`);
    let pointsDrawn = document.querySelectorAll('.point');
 
-    if (currentPresets.shape == 'circle') {
+    if (currentPresets.shape === 'circle') {
       pTag.innerHTML = currentPresets.shape
       currentPresets.borderRadius = `${0}px`;
       currentPresets.shape = 'square';
      
     } else if
-      (currentPresets.shape == 'square') {
+      (currentPresets.shape === 'square') {
       currentPresets.borderRadius = `${5}px`;
       pTag.innerHTML = currentPresets.shape
       currentPresets.shape = 'circle';
@@ -226,7 +224,7 @@ function createNewDrawingPoint(mouseX, mouseY) {
     pointsDrawn.forEach((singlePoint)=>{
       singlePoint.style.borderRadius = currentPresets.borderRadius;
     })
-
+  }
 
 
    /*D:: CHANGE DRAWING MODE ********************************************/
@@ -327,5 +325,5 @@ createNewDrawingPoint(e.clientX,e.clientY);
   toRemove[i].remove();
   }
    
-  }}
+  }
 } //end setup
