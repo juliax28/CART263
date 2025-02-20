@@ -28,6 +28,9 @@ let garden = {
       //the sky element
       skyDiv: document.createElement("div"),
     },
+    //Bees
+    bees:[],
+    numBees:5,
   };
   // new  sun instancce
   let sun =  new Sun(10,10,{r: 240, g: 206,b: 83})
@@ -64,12 +67,35 @@ let garden = {
         garden.flowers.push(flower);
       }
 
+  
+
       for (let i = 0; i < garden.numFlowers; i++) {
         // Add the flower to the array of flowers
         garden.flowers[i].renderFlower();
       }
-let bee = new Bee (100,120,10);
-      bee.renderBee();
+
+
+      /// Bees
+
+      
+      for (let i = 0; i < garden.numBees; i++) {
+        // Create variables for our arguments for clarity
+        let x = Math.random() * (window.innerWidth);
+        let y = Math.random() * 120;
+          
+        // Create a new flower using the arguments
+        let bee = new Bee(x, y);
+        // Add the flower to the array of flowers
+        garden.bees.push(bee);
+      }
+
+      for (let i = 0; i < garden.bees.length; i++) {
+        // Add the flower to the array of flowers
+        garden.bees[i].renderBee();
+        console.log(garden.bees[i].y);
+      }
+      
+     
   }
   createAndRenderTheGarden();
   window.addEventListener("keydown", function handleKeyDown(event) {
