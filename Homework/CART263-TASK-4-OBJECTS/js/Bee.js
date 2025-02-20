@@ -5,7 +5,7 @@ this.y = y;
 this.x = x;
 this.speed = speed;
 // this.beeImg =  document.createElement("img");
-this.beeImage = new Image(100,100);
+this.beeImage = new Image(50,50);
 this.beeImage.src = "images/bee.png";
 
 
