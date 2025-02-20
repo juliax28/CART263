@@ -39,8 +39,7 @@ let garden = {
     garden.sky.skyDiv.style.background = `rgb(${garden.sky.skyColor.r},${garden.sky.skyColor.g},${garden.sky.skyColor.b})`;
     document.getElementsByTagName("main")[0].appendChild(garden.sky.skyDiv);
     //sun
-    sun.renderSun();
-
+    sun.renderSun(); 
     //grass
     garden.grass.grassDiv.classList.add("grass");
     garden.grass.grassDiv.style.background = `rgb(${garden.grass.grassColor.r},${garden.grass.grassColor.g},${garden.grass.grassColor.b})`;
@@ -69,6 +68,8 @@ let garden = {
         // Add the flower to the array of flowers
         garden.flowers[i].renderFlower();
       }
+let bee = new Bee (100,120,10);
+      bee.renderBee();
   }
   createAndRenderTheGarden();
   window.addEventListener("keydown", function handleKeyDown(event) {
@@ -90,6 +91,7 @@ let garden = {
  * all different sizes and colors and in different positions and then call the animateBee() method on all the Bees
  * 
 */
+
 
 /**TEAM B -- SQUIRRELS
  * 1/ Create a  file to hold a  Squirrel Class (i.e. Squirrel.js)

@@ -39,3 +39,8 @@ body{
     position:absolute;
     border-style:solid;
 }
+
+.bee{
+    position:absolute;
+    z-index:400;
+}
