@@ -1,6 +1,6 @@
-window.onload = function (){
-// Our garden
-let garden = {
+window.onload = function () {
+  // Our garden
+  let garden = {
     // An array to store the individual flowers
     flowers: [],
     // How many flowers in the garden
@@ -16,7 +16,7 @@ let garden = {
       //the grass element
       grassDiv: document.createElement("div"),
     },
- 
+
     /*sky object */
     sky: {
       // The color of the sky (background)
@@ -29,11 +29,11 @@ let garden = {
       skyDiv: document.createElement("div"),
     },
     //Bees
-    bees:[],
-    numBees:5,
+    bees: [],
+    numBees: 5,
   };
   // new  sun instancce
-  let sun =  new Sun(10,10,{r: 240, g: 206,b: 83})
+  let sun = new Sun(10, 10, { r: 240, g: 206, b: 83 })
 
   function createAndRenderTheGarden() {
     /* note how we use dot notation....*/
@@ -42,7 +42,7 @@ let garden = {
     garden.sky.skyDiv.style.background = `rgb(${garden.sky.skyColor.r},${garden.sky.skyColor.g},${garden.sky.skyColor.b})`;
     document.getElementsByTagName("main")[0].appendChild(garden.sky.skyDiv);
     //sun
-    sun.renderSun(); 
+    sun.renderSun();
     //grass
     garden.grass.grassDiv.classList.add("grass");
     garden.grass.grassDiv.style.background = `rgb(${garden.grass.grassColor.r},${garden.grass.grassColor.g},${garden.grass.grassColor.b})`;
@@ -50,62 +50,71 @@ let garden = {
 
     //create some flowers
     for (let i = 0; i < garden.numFlowers; i++) {
-        // Create variables for our arguments for clarity
-        let x = Math.random() * (window.innerWidth);
-        let y = Math.random() * 120;
-        let size = Math.random() * 30 + 10;
-        let stemLength = Math.random() * 50 + 20;
-        let petalColor = {
-          r: parseInt(Math.random() * 155) + 100,
-          g: parseInt(Math.random() * 155) + 100,
-          b: parseInt(Math.random() * 155) + 100,
-        };
-  
-        // Create a new flower using the arguments
-        let flower = new Flower(x, y, size, stemLength, petalColor);
-        // Add the flower to the array of flowers
-        garden.flowers.push(flower);
-      }
+      // Create variables for our arguments for clarity
+      let x = Math.random() * (window.innerWidth);
+      let y = Math.random() * 120;
+      let size = Math.random() * 30 + 10;
+      let stemLength = Math.random() * 50 + 20;
+      let petalColor = {
+        r: parseInt(Math.random() * 155) + 100,
+        g: parseInt(Math.random() * 155) + 100,
+        b: parseInt(Math.random() * 155) + 100,
+      };
 
-  
-
-      for (let i = 0; i < garden.numFlowers; i++) {
-        // Add the flower to the array of flowers
-        garden.flowers[i].renderFlower();
-      }
+      // Create a new flower using the arguments
+      let flower = new Flower(x, y, size, stemLength, petalColor);
+      // Add the flower to the array of flowers
+      garden.flowers.push(flower);
+    }
 
 
-      /// Bees
 
-      
-      for (let i = 0; i < garden.numBees; i++) {
-        // Create variables for our arguments for clarity
-        let x = Math.random() * (window.innerWidth);
-        let y = Math.random() * 120;
-          
-        // Create a new flower using the arguments
-        let bee = new Bee(x, y);
-        // Add the flower to the array of flowers
-        garden.bees.push(bee);
-      }
+    for (let i = 0; i < garden.numFlowers; i++) {
+      // Add the flower to the array of flowers
+      garden.flowers[i].renderFlower();
+    }
 
-      for (let i = 0; i < garden.bees.length; i++) {
-        // Add the flower to the array of flowers
-        garden.bees[i].renderBee();
-        console.log(garden.bees[i].y);
-      }
-      
-     
+
+    /// Bees
+
+    //Render the bee Images in the sky
+    for (let i = 0; i < garden.numBees; i++) {
+      // Create variables for our arguments for clarity
+      let x = Math.random() * (window.innerWidth);
+      let y = Math.random() * 120;
+
+      // Create a new bee using the arguments
+      let bee = new Bee(x, y);
+      // Add the bee to the array of bees
+      garden.bees.push(bee);
+    }
+
+    for (let i = 0; i < garden.bees.length; i++) {
+      // Add the bee to the array of bees
+      garden.bees[i].renderBee();
+      console.log(garden.bees[i].y);
+    }
+
+    //Animate the five bees
+    for (let i = 0; i < garden.bees.length; i++) {
+      // animate the bee array
+      garden.bees[i].animateBee();
+
+    }
+
+
   }
+
+
   createAndRenderTheGarden();
   window.addEventListener("keydown", function handleKeyDown(event) {
-  //call the handleKeyDown method of class
-  sun.handleKeyDownInSUn(event);
-});
+    //call the handleKeyDown method of class
+    sun.handleKeyDownInSUn(event);
+  });
 
 }
 
-  
+
 
 /**TEAM A -- BEES
  * 1/ Create a  file to hold a  Bee Class (i.e. Bee.js)

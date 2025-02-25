@@ -1,12 +1,13 @@
 class Bee {
 
-    constructor (x,y,speed){
-this.y = y;
-this.x = x;
-this.speed = speed;
-// this.beeImg =  document.createElement("img");
-this.beeImage = new Image(50,50);
-this.beeImage.src = "images/bee.png";
+    constructor(x, y, speedX, speedY) {
+        this.y = y;
+        this.x = x;
+        this.speedX = speedX;
+        this.speedY = speedY;
+        // this.beeImg =  document.createElement("img");
+        this.beeImage = new Image(50, 50);
+        this.beeImage.src = "images/bee.png";
 
 
 
@@ -14,7 +15,7 @@ this.beeImage.src = "images/bee.png";
 
     }
 
-    renderBee(){
+    renderBee() {
         // //sun - IN the sky
         this.beeImage.style.left = this.x + "px";
 
@@ -22,8 +23,43 @@ this.beeImage.src = "images/bee.png";
         this.beeImage.classList.add("bee");
 
         // //append to the SKY div
-       
-       document.querySelector(".sky").appendChild(this.beeImage);
-       
+
+        document.querySelector(".sky").appendChild(this.beeImage);
+
+    }
+    checkBounds(parent, beeImage) {
+        let bounds = parent.sky();
+        if (parseInt(beeImage.style.left) > bounds.width) {
+            speedX *= -1;
+
+
         }
+        else if (parseInt(beeImage.style.left) < 0) {
+            speedX *= -1;
+
+        }
+
+        if (parseInt(beeImage.style.top) > bounds.height) {
+            speedY *= -1;
+
+        }
+        else if (parseInt(beeImage.style.top) < 0) {
+            speedY *= -1;
+        }
+
+    }
+
+    animateBee() {
+        //move the bee
+        // click on the ball, bool is on and the ball moves
+        ref = window.requestAnimationFrame(animate);
+        function animate() {
+            beeImage.style.left = parseInt(beeImage.style.left) + speedX + "px";
+            beeImage.style.top = parseInt(beeImage.style.top) + speedY + "px";
+            checkBounds(parentCanvas, beeImage);
+            ref = window.requestAnimationFrame(animate);
+        }
+    }
+
+
 }
