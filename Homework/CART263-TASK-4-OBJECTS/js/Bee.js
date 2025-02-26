@@ -1,12 +1,12 @@
 class Bee {
 
-    constructor(x, y, imageX, imageY) {
+    constructor(x, y, imageSize) {
         this.y = y;
         this.x = x;
         this.speedX = -1;
         this.speedY = 0.7;
         // this.beeImg =  document.createElement("img");
-        this.beeImage = new Image(imageX, imageY);
+        this.beeImage = new Image(imageSize, imageSize);
         this.beeImage.src = "images/bee.png";
 
 
