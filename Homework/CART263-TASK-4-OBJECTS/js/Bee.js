@@ -29,9 +29,9 @@ class Bee {
 
     }
 
-    checkBounds(bounds) {
+    checkBounds(boundsX, boundsY) {
         let beeMoving = this;
-        if (parseInt(beeMoving.beeImage.style.left) > bounds.width) {
+        if (parseInt(beeMoving.beeImage.style.left) > boundsX) {
             beeMoving.speedX *= -1;
 
 
@@ -41,7 +41,7 @@ class Bee {
 
         }
 
-        if (parseInt(beeMoving.beeImage.style.top) > bounds.height) {
+        if (parseInt(beeMoving.beeImage.style.top) > boundsY) {
             beeMoving.speedY *= -1;
 
         }
@@ -57,7 +57,6 @@ class Bee {
         // click on the ball, bool is on and the ball moves
         let ref = window.requestAnimationFrame(animate);
         function animate() {
-            console.log(self)
             self.beeImage.style.left = parseInt(self.beeImage.style.left) + self.speedX + "px";
             self.beeImage.style.top = parseInt(self.beeImage.style.top) + self.speedY + "px";
             //self.checkBounds(self.parentCanvas, self.beeImage);

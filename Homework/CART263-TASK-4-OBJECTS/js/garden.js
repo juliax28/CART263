@@ -94,7 +94,6 @@ window.onload = function () {
     for (let i = 0; i < garden.bees.length; i++) {
       // Add the bee to the array of bees
       garden.bees[i].renderBee();
-      console.log(garden.bees[i].y);
     }
 
     //Animate the five bees
@@ -105,9 +104,14 @@ window.onload = function () {
     }
     //checkbounds on bees
     for (let i = 0; i < garden.bees.length; i++) {
-      let skyBounds = garden.sky.skyDiv.style;
+      let skyBoundsX = garden.sky.skyDiv.style.width + "vw";
+      let skyBoundsY = garden.sky.skyDiv.style.height + "px";
+      console.log(skyBoundsX, skyBoundsY);
+      console.log(garden.sky.skyDiv.style.width);
       // animate the bee array
-      garden.bees[i].checkBounds(skyBounds);
+      garden.bees[i].checkBounds(skyBoundsX, skyBoundsY);
+
+
 
     }
 
