@@ -108,7 +108,7 @@ window.onload = function () {
       let skyBoundsY = garden.sky.skyDiv.style.height + "px";
       console.log(skyBoundsX, skyBoundsY);
       console.log(garden.sky.skyDiv.style.width);
-      // animate the bee array
+
       garden.bees[i].checkBounds(skyBoundsX, skyBoundsY);
 
 
