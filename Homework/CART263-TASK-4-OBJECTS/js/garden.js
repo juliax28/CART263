@@ -103,6 +103,13 @@ window.onload = function () {
       garden.bees[i].animateBee();
 
     }
+    //checkbounds on bees
+    for (let i = 0; i < garden.bees.length; i++) {
+      let skyBounds = garden.sky.skyDiv.style;
+      // animate the bee array
+      garden.bees[i].checkBounds(skyBounds);
+
+    }
 
 
   }

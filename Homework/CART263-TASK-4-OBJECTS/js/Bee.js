@@ -1,6 +1,6 @@
 class Bee {
 
-    constructor(x, y, speedX, speedY) {
+    constructor(x, y) {
         this.y = y;
         this.x = x;
         this.speedX = 10;
@@ -28,27 +28,28 @@ class Bee {
         document.querySelector(".sky").appendChild(this.beeImage);
 
     }
-    // checkBounds(parent, beeImage) {
-    //     let bounds = parent.sky();
-    //     if (parseInt(this.beeImage.style.left) > bounds.width) {
-    //         this.speedX *= -1;
+
+    checkBounds(bounds) {
+        let beeMoving = this;
+        if (parseInt(beeMoving.beeImage.style.left) > bounds.width) {
+            beeMoving.speedX *= -1;
 
 
-    //     }
-    //     else if (parseInt(this.beeImage.style.left) < 0) {
-    //         this.speedX *= -1;
+        }
+        else if (parseInt(beeMoving.beeImage.style.left) < 0) {
+            beeMoving.speedX *= -1;
 
-    //     }
+        }
 
-    //     if (parseInt(this.beeImage.style.top) > bounds.height) {
-    //         this.speedY *= -1;
+        if (parseInt(beeMoving.beeImage.style.top) > bounds.height) {
+            beeMoving.speedY *= -1;
 
-    //     }
-    //     else if (parseInt(this.beeImage.style.top) < 0) {
-    //         this.speedY *= -1;
-    //     }
+        }
+        else if (parseInt(beeMoving.beeImage.style.top) < 0) {
+            beeMoving.speedY *= -1;
+        }
 
-    // }
+    }
 
     animateBee() {
         let self = this;
