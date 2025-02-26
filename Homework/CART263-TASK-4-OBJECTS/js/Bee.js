@@ -29,21 +29,21 @@ class Bee {
     }
     checkBounds(parent, beeImage) {
         let bounds = parent.sky();
-        if (parseInt(beeImage.style.left) > bounds.width) {
+        if (parseInt(this.beeImage.style.left) > bounds.width) {
             speedX *= -1;
 
 
         }
-        else if (parseInt(beeImage.style.left) < 0) {
+        else if (parseInt(this.beeImage.style.left) < 0) {
             speedX *= -1;
 
         }
 
-        if (parseInt(beeImage.style.top) > bounds.height) {
+        if (parseInt(this.beeImage.style.top) > bounds.height) {
             speedY *= -1;
 
         }
-        else if (parseInt(beeImage.style.top) < 0) {
+        else if (parseInt(this.beeImage.style.top) < 0) {
             speedY *= -1;
         }
 
@@ -52,11 +52,11 @@ class Bee {
     animateBee() {
         //move the bee
         // click on the ball, bool is on and the ball moves
-        ref = window.requestAnimationFrame(animate);
+        this.ref = window.requestAnimationFrame(animate);
         function animate() {
-            beeImage.style.left = parseInt(beeImage.style.left) + speedX + "px";
-            beeImage.style.top = parseInt(beeImage.style.top) + speedY + "px";
-            checkBounds(parentCanvas, beeImage);
+            this.beeImage.style.left = parseInt(this.beeImage.style.left) + speedX + "px";
+            this.beeImage.style.top = parseInt(this.beeImage.style.top) + speedY + "px";
+            checkBounds(parentCanvas, this.beeImage);
             ref = window.requestAnimationFrame(animate);
         }
     }
