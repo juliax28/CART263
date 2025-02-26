@@ -82,11 +82,11 @@ window.onload = function () {
       // Create variables for our arguments for clarity
       let x = Math.random() * (window.innerWidth);
       let y = Math.random() * 120;
-      let imageX = Math.random() * 10;
-      let imageY = Math.random() * 10;
+      // let imageX = Math.random() * 10;
+      // let imageY = Math.random() * 10;
 
       // Create a new bee using the arguments
-      let bee = new Bee(x, y, imageX, imageY);
+      let bee = new Bee(x, y);
       // Add the bee to the array of bees
       garden.bees.push(bee);
     }
