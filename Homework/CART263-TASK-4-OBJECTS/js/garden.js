@@ -85,6 +85,9 @@ window.onload = function () {
       let imageSize = Math.random() * 100;
 
 
+
+
+
       // Create a new bee using the arguments
       let bee = new Bee(x, y, imageSize);
       // Add the bee to the array of bees
@@ -93,7 +96,9 @@ window.onload = function () {
 
     for (let i = 0; i < garden.bees.length; i++) {
       // Add the bee to the array of bees
-      garden.bees[i].renderBee();
+      let hueShift = Math.random() * 1000
+
+      garden.bees[i].renderBee(hueShift);
     }
 
     //Animate the five bees
@@ -106,8 +111,6 @@ window.onload = function () {
     for (let i = 0; i < garden.bees.length; i++) {
       let skyBoundsX = garden.sky.skyDiv.style.width + "vw";
       let skyBoundsY = garden.sky.skyDiv.style.height + "px";
-      console.log(skyBoundsX, skyBoundsY);
-      console.log(garden.sky.skyDiv.style.width);
 
       garden.bees[i].checkBounds(skyBoundsX, skyBoundsY);
 

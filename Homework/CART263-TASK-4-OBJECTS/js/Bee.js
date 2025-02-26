@@ -1,6 +1,6 @@
 class Bee {
 
-    constructor(x, y, imageSize) {
+    constructor(x, y, imageSize,) {
         this.y = y;
         this.x = x;
         this.speedX = -1;
@@ -14,14 +14,25 @@ class Bee {
 
 
 
+
+
     }
 
-    renderBee() {
+    renderBee(hueShift) {
         // //sun - IN the sky
         this.beeImage.style.left = this.x + "px";
-
         this.beeImage.style.top = this.y + "px";
         this.beeImage.classList.add("bee");
+        // this.beeImage.style.filter = "hue-rotate(0deg)";
+        this.beeImage.style.filter = `hue-rotate(${hueShift}deg)`;
+        console.log(this.beeImage.style.filter = `hue-rotate(${hueShift}deg)`);
+
+
+
+
+
+
+
 
         // //append to the SKY div
 
@@ -32,7 +43,6 @@ class Bee {
 
     checkBounds() {
         let beeMoving = this;
-        console.log(document.querySelector(".sky").getBoundingClientRect())
         let skyWidth = document.querySelector(".sky").getBoundingClientRect().width;
         let skyHeight = document.querySelector(".sky").getBoundingClientRect().height;
         if (parseInt(beeMoving.beeImage.style.left) > skyWidth) {
