@@ -6,7 +6,7 @@ class Bee {
         this.speedX = speedX;
         this.speedY = speedY;
         // this.beeImg =  document.createElement("img");
-        this.beeImage = new Image(50, 50);
+        this.beeImage = new Image(imageX, imageY);
         this.beeImage.src = "images/bee.png";
 
 
