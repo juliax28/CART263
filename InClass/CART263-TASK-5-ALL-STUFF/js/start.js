@@ -74,6 +74,12 @@ function animationLoop(){
  */
 
 
+// Add a circles when click
+    // 
+// Remove by pressing on them
+//they float around and 'run away' from the mouse like lil bubbles
+// if I can maybe they collide?
+
 /** TASK 2:(Drawing Board B) - 
  *  1: Affect the rectangle by input from the microphone somehow, in real time...
  *  at least two properties of the rectangle need to update and change...
