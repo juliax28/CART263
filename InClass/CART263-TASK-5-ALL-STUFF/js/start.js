@@ -23,10 +23,8 @@ function go_all_stuff() {
         theContexts.push(context);
     }
 
-    let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
-    //add a circular object to canvas A
-    drawingBoardA.addObj(new CircularObj(Math.random() * 100, Math.random() * 100, Math.random() * 100, "#FFC300", "#E6E6FA", drawingBoardA.context))
-    drawingBoardA.display();
+
+
 
 
 
@@ -82,6 +80,16 @@ function go_all_stuff() {
     //they 'run away' from the mouse like lil bubbles
     // in the mouse move function
     // if I can maybe they collide?
+
+    let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
+    //add a circular object to canvas A
+    let numbCircles = [0, 1, 2, 3, 4];
+    for (let i = 0; i < numbCircles.length; i++) {
+        drawingBoardA.addObj(new CircularObj(Math.random() * 250, Math.random() * 250, Math.random() * 100, "#FFC300", "#E6E6FA", drawingBoardA.context))
+        drawingBoardA.display();
+        console.log(numbCircles);
+    };
+
 
     /** TASK 2:(Drawing Board B) - 
      *  1: Affect the rectangle by input from the microphone somehow, in real time...
