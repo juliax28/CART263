@@ -85,7 +85,7 @@ function go_all_stuff() {
     //add a circular object to canvas A
     let numbCircles = [1, 2, 3, 4, 5];
     for (let i = 0; i < numbCircles.length; i++) {
-        let x = Math.random() * 100;
+        let x = Math.random() * 200;
         let y = Math.random() * 100;
         let radius = Math.random() * 100;
         drawingBoardA.addObj(new CircularObj(x, y, radius, "#FFC300", "#E6E6FA", drawingBoardA.context))

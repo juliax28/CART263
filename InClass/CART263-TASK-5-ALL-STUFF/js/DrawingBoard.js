@@ -74,8 +74,9 @@ class DrawingBoard {
 
   /* method to add animate objects on canvas */
   animate() {
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
     for (let i = 0; i < this.objectsOnCanvas.length; i++) {
-      this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
+
       this.objectsOnCanvas[i].update();
       this.objectsOnCanvas[i].display();
     }
