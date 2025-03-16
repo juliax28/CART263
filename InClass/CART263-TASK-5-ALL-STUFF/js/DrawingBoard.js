@@ -48,6 +48,12 @@ class DrawingBoard {
     //differentiate which canvas
     //you can remove the console.logs /// 
     if (this.drawingBoardId === "partA") {
+      let CircleX = e.clientX;
+      let CircleY = e.clientY;
+      let radius = Math.random() * 100;
+      this.addObj(new CircularObj(CircleX, CircleY, radius, "#FFC300", "#E6E6FA", this.context))
+      this.display();
+
       console.log("in A")
     }
     if (this.drawingBoardId === "partB") {

@@ -84,18 +84,19 @@ function go_all_stuff() {
     let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
     //add a circular object to canvas A
 
-    document.addEventListener("click", function () {
-        let numbCircles = [1, 2, 3, 4, 5];
-        for (let i = 0; i < numbCircles.length; i++) {
-            let x = Math.random() * 500;
-            let y = Math.random() * 500;
-            let radius = Math.random() * 100;
-            drawingBoardA.addObj(new CircularObj(x, y, radius, "#FFC300", "#E6E6FA", drawingBoardA.context))
-            drawingBoardA.display();
-            console.log(numbCircles.length);
-        };
 
-    })
+
+
+
+    // for (let i = 0; i < numbCircles.length; i++) {
+    //     let x = Math.random() * 500;
+    //     let y = Math.random() * 500;
+    //     let radius = Math.random() * 100;
+    //     drawingBoardA.addObj(new CircularObj(x, y, radius, "#FFC300", "#E6E6FA", drawingBoardA.context))
+    //     drawingBoardA.display();
+    //     console.log(numbCircles.length);
+    // };
+
 
 
 
