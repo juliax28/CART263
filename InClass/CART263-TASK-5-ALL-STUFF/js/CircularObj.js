@@ -1,5 +1,5 @@
 class CircularObj {
-  constructor(x, y, radius, f_color, s_color, context) {
+  constructor(x, y, radius, f_color, s_color, context,) {
     // We write instructions to set up a Flower here
     // Position and size information
     this.x = x;

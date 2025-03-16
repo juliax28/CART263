@@ -16,6 +16,7 @@ class DrawingBoard {
     });
   }
 
+
   overCanvas(e) {
     //console.log("over");
     this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
@@ -25,7 +26,7 @@ class DrawingBoard {
     //differentiate which canvas
     //you can remove the console.logs /// 
     if (this.drawingBoardId === "partA") {
-      console.log("in A")
+      // console.log("in A")
     }
     if (this.drawingBoardId === "partB") {
       console.log("in B")
@@ -39,6 +40,7 @@ class DrawingBoard {
   }
 
   clickCanvas(e) {
+    let circles = [];
     // console.log("clicked");
     this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
     this.mouseOffsetX = parseInt(e.clientX - this.canvasBoundingRegion.x);
@@ -47,14 +49,20 @@ class DrawingBoard {
 
     //differentiate which canvas
     //you can remove the console.logs /// 
+
     if (this.drawingBoardId === "partA") {
-      let CircleX = e.clientX;
-      let CircleY = e.clientY;
+
+      let CircleX = this.mouseOffsetX;
+      let CircleY = this.mouseOffsetY;
       let radius = Math.random() * 100;
       this.addObj(new CircularObj(CircleX, CircleY, radius, "#FFC300", "#E6E6FA", this.context))
       this.display();
 
-      console.log("in A")
+      //add a circle to the circles array on click
+      let circle = new CircularObj(CircleX, CircleY, radius, "#FFC300", "#E6E6FA", this.context);
+
+      circles.push(circle);
+      console.log(circles.length);
     }
     if (this.drawingBoardId === "partB") {
       console.log("in B")
