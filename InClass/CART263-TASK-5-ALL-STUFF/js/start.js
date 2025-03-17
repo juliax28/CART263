@@ -82,6 +82,8 @@ function go_all_stuff() {
     // if I can maybe they collide?
 
     let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
+    drawingBoardA.DeleteCircles();
+
     //add a circular object to canvas A
 
 
