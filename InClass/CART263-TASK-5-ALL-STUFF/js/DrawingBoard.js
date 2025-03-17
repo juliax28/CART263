@@ -6,6 +6,7 @@ class DrawingBoard {
     this.objectsOnCanvas = [];
     let self = this;
     this.drawingBoardId = drawingBoardId;
+    this.circles = [];
     //each element has a mouse clicked and a mouse over
     this.canvas.addEventListener("click", function (e) {
       self.clickCanvas(e);
@@ -40,7 +41,7 @@ class DrawingBoard {
   }
 
   clickCanvas(e) {
-    let circles = [];
+
     // console.log("clicked");
     this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
     this.mouseOffsetX = parseInt(e.clientX - this.canvasBoundingRegion.x);
@@ -61,8 +62,8 @@ class DrawingBoard {
       //add a circle to the circles array on click
       let circle = new CircularObj(CircleX, CircleY, radius, "#FFC300", "#E6E6FA", this.context);
 
-      circles.push(circle);
-      console.log(circles.length);
+      this.circles.push(circle);
+      console.log(this.circles.length);
     }
     if (this.drawingBoardId === "partB") {
       console.log("in B")
