@@ -16,7 +16,7 @@ class DrawingBoard {
       self.overCanvas(e);
     });
 
-    this.canvas.addEventListener("keyDown", function (e) {
+    this.canvas.addEventListener("keydown", function (e) {
       self.DeleteCircles(e);
     });
   }
@@ -81,10 +81,11 @@ class DrawingBoard {
   }
 
   //Keydown Event for Canvas A
-  DeleteCircles() {
+  DeleteCircles(e) {
     this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
     if (this.drawingBoardId === "partA") {
-      this.circles.length = this.circles.length - 1;
+      this.circles.pop();
+      console.log("Keypressed");
     }
   }
 
