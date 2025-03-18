@@ -84,6 +84,7 @@ class DrawingBoard {
   DeleteCircles(e) {
     this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
     if (this.drawingBoardId === "partA") {
+      e.key === "ArrowRight";
       this.circles.pop();
       console.log("Keypressed");
     }
