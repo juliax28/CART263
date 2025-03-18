@@ -27,7 +27,7 @@ function go_all_stuff() {
 
 
 
-
+    let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
     let drawingBoardB = new DrawingBoard(theCanvases[1], theContexts[1], theCanvases[1].id);
     //add a rectangular object to canvas B
     drawingBoardB.addObj(new RectangularObj(100, 100, 50, 70, "#FF5733", "#E6E6FA", drawingBoardB.context))
@@ -75,8 +75,8 @@ function go_all_stuff() {
 
 
 
-    let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
-    drawingBoardA.DeleteCircles();
+
+
 
     //add a circular object to canvas A
 
