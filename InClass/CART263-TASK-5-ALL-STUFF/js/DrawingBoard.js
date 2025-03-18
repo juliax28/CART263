@@ -82,7 +82,7 @@ class DrawingBoard {
       // console.log(this.objectsOnCanvas[0].fill_color);
       // console.log(this.objectsOnCanvas[0].update(newCircCol), "test")
       // console.log(this.objectsOnCanvas[0], "the circle OBJ")
-      this.objectsOnCanvas[0].CircleColChange(newCircCol);
+      this.objectsOnCanvas[0].updateColor(newCircCol);
 
 
     }

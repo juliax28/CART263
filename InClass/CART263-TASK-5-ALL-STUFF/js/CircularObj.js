@@ -32,12 +32,12 @@ class CircularObj {
 
 
 
-  CircleColChange(newCircCol) {
+  updateColor(newCircCol) {
     //update circle
     //this.x += 1;
     //console.log("circle update");
 
-    this.f_color = newCircCol;
+    this.fill_color = newCircCol;
     console.log(newCircCol);
 
 
