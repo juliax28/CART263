@@ -54,6 +54,7 @@ function go_all_stuff() {
         drawingBoardC.animate();
         drawingBoardD.run(videoEl)
         window.requestAnimationFrame(animationLoop);
+
     }
 
 

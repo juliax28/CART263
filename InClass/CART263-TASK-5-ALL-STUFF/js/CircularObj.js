@@ -42,7 +42,13 @@ class CircularObj {
 
 
   }
-  update() {
+
+
+
+  update(xSpeed, ySpeed) {
+
+    this.x += xSpeed;
+    this.y += ySpeed;
 
 
 
