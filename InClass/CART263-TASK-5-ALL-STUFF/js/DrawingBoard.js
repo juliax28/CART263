@@ -16,8 +16,16 @@ class DrawingBoard {
       self.overCanvas(e);
     });
 
-    this.canvas.addEventListener("keydown", function (e) {
-      self.DeleteCircles(e);
+    window.addEventListener("keydown", function (e) {
+
+      if (self.drawingBoardId === "partA") {
+        //console.log("test")
+        e.preventDefault()
+        self.DeleteCircles(e); //call
+
+      }
+
+
     });
   }
 
@@ -82,14 +90,13 @@ class DrawingBoard {
 
   //Keydown Event for Canvas A
   DeleteCircles(e) {
-    this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
-    if (this.drawingBoardId === "partA") {
-      e.key === "ArrowRight";
+    if (e.code === "ArrowRight") {
+      console.log(this.circles)
       this.circles.pop();
+      this.objectsOnCanvas.pop();
       console.log("Keypressed");
     }
   }
-
 
 
   /* method to add obj to canvas */
