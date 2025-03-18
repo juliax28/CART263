@@ -30,13 +30,20 @@ class CircularObj {
     this.context.stroke();
   }
 
-  update(newCircCol) {
+
+
+  CircleColChange(newCircCol) {
     //update circle
     //this.x += 1;
     //console.log("circle update");
 
     this.f_color = newCircCol;
     console.log(newCircCol);
+
+
+  }
+  update() {
+
 
 
   }
