@@ -75,7 +75,12 @@ class DrawingBoard {
       let circle = new CircularObj(CircleX, CircleY, radius, "#FFC300", "#E6E6FA", this.context);
 
       this.circles.push(circle);
-      console.log(this.circles.length);
+      //console.log(this.circles.length);
+
+      let newCircCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+      //this.objectsOnCanvas[0].update(newCircCol);
+      console.log(this.objectsOnCanvas[0]);
+      this.objectsOnCanvas[0].update(newCircCol);
     }
     if (this.drawingBoardId === "partB") {
       console.log("in B")
