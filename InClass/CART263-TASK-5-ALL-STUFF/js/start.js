@@ -72,14 +72,7 @@ function go_all_stuff() {
      */
 
 
-    // Add a circles when click
-    // First - create a mouse click event listener within the start that will draw the circles
-    //Revisit the bees to see how to create balls that are all different colors and sizes
-    // Remove by pressing on them
-    // Also in the mouse click function
-    //they 'run away' from the mouse like lil bubbles
-    // in the mouse move function
-    // if I can maybe they collide?
+
 
     let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
     drawingBoardA.DeleteCircles();
