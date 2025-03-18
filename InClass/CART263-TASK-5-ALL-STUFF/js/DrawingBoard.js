@@ -49,6 +49,10 @@ class DrawingBoard {
     }
     if (this.drawingBoardId === "partD") {
       console.log("in D")
+      // square follows the mouse (Olivia)
+      let mx = this.mouseOffsetX
+      let my = this.mouseOffsetY
+      this.objectsOnCanvas[0].updatePositionRect(mx, my);
     }
   }
 
@@ -103,6 +107,11 @@ class DrawingBoard {
     }
     if (this.drawingBoardId === "partD") {
       console.log("in D")
+      //New color on click (Olivia)
+      //color randomizer found on stackoverflow.com
+      let newCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+      this.objectsOnCanvas[0].changeColor(newCol);
+
     }
   }
 
