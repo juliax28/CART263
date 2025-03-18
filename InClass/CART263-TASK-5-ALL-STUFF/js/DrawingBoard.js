@@ -79,8 +79,12 @@ class DrawingBoard {
 
       let newCircCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
       //this.objectsOnCanvas[0].update(newCircCol);
-      console.log(this.objectsOnCanvas[0]);
+      // console.log(this.objectsOnCanvas[0].fill_color);
+      // console.log(this.objectsOnCanvas[0].update(newCircCol), "test")
+      // console.log(this.objectsOnCanvas[0], "the circle OBJ")
       this.objectsOnCanvas[0].update(newCircCol);
+
+
     }
     if (this.drawingBoardId === "partB") {
       console.log("in B")

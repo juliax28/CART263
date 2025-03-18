@@ -36,5 +36,8 @@ class CircularObj {
     //console.log("circle update");
 
     this.f_color = newCircCol;
+    console.log(newCircCol);
+
+
   }
 }
