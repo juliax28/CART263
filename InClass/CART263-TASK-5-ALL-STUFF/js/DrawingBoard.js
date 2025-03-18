@@ -110,6 +110,7 @@ class DrawingBoard {
 
   /* method to add obj to canvas */
   addObj(objToAdd) {
+
     this.objectsOnCanvas.push(objToAdd);
   }
 
