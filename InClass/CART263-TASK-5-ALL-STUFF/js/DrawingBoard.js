@@ -77,12 +77,21 @@ class DrawingBoard {
       this.circles.push(circle);
       //console.log(this.circles.length);
 
-      let newCircCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+
       //this.objectsOnCanvas[0].update(newCircCol);
       // console.log(this.objectsOnCanvas[0].fill_color);
       // console.log(this.objectsOnCanvas[0].update(newCircCol), "test")
       // console.log(this.objectsOnCanvas[0], "the circle OBJ")
-      this.objectsOnCanvas[0].updateColor(newCircCol);
+
+
+      for (let i = 0; i < this.circles.length; i++) {
+        // Add the bee to the array of bees
+        let newFill = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+
+        this.objectsOnCanvas[i].updateColor(newFill);
+      }
+
+
 
 
     }
