@@ -88,6 +88,8 @@ function run() {
 
   /****** PART D:: VISUALIZE  */
   function runPartD(new_sentence) {
+    let outputDiv = document.querySelector("#output");
+    outputDiv.style.display = "block";
 
   }
 
