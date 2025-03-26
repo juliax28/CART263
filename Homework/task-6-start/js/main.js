@@ -46,13 +46,38 @@ function run() {
 
   /****** PART C:: POEM CREATION  */
   function runPartC(rainbow_words, seed_phrase_array) {
-    console.log(rainbow_words);
-    console.log(seed_phrase_array);
+
+
 
     let rainbowLength = rainbow_words.length;
-    let poem_phrase = "";
-    for (let seedPhrase = 0; seedPhrase < seed_phrase_array.length; seedPhrase++) {
-      let
+    let poem_sentence = "";
+    for (let seedArray = 0; seedArray < seed_phrase_array.length; seedArray++) {
+      let word = seed_phrase_array[seedArray];
+      let wordArrayL = word.length;
+      for (let j = 0; j < wordArrayL; j++) {
+        let char = word.charAt(j);
+        // console.log(char);
+        for (let k = 0; k < rainbowLength; k++) {
+          let outputWord = rainbow_words[k];
+          let rainbowChar = outputWord.charAt(j);
+
+          if (rainbowChar === char) {
+            if (poem_sentence === "") {
+              poem_sentence += outputWord;
+              break;
+            }
+            else {
+              poem_sentence = + "" + outputWord;
+              break;
+            }
+          }
+          console.log();
+        }
+
+
+      }
+
+
 
     }
 
