@@ -5,14 +5,22 @@ function run() {
 
 
   /****** PART A:: FETCH */
+
   async function fetchText() {
     console.log("in fetch");
-    let raw_rainbow_text = "files/rainbow.txt";
+    let raw_rainbow_text = "";
     try {
-
+      let response = await fetch('files/rainbow.txt');
+      let raw_rainbow_text = await response.text();
       document.querySelector("#resetButton").addEventListener("click", resetPoem);
+      document.querySelector("#stepOneButton").style.display = "none";
+      document.querySelector("#inputDiv").style.display = "block";
+      document.getElementById("rainbow_text").textContent = raw_rainbow_text;
+
       runPartB(raw_rainbow_text);
-    } catch (e) { }
+      console.log(raw_rainbow_text);
+
+    } catch (e) { console.log(e); }
   }
 
   /****** PART B:: TEXT PROCESSING  */
