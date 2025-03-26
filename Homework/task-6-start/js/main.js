@@ -30,9 +30,16 @@ function run() {
 
     /* FILL IN HERE */
     function producePoem() {
-      console.log(originalRainBowText)
-      //SR
+      //console.log(originalRainBowText);
+      let newDelimiter = /["".?!\n]/
+      let phrase_as_array = document.getElementById("phrase").value.split(newDelimiter);
+      let rainbow_tokens = originalRainBowText.split(newDelimiter);
+      console.log(phrase_as_array);
+      console.log(rainbow_tokens);
       runPartC(rainbow_tokens, phrase_as_array);
+
+
+
 
     }
   }
