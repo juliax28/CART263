@@ -17,7 +17,7 @@ function run() {
       document.querySelector("#inputDiv").style.display = "block";
       document.getElementById("rainbow_text").textContent = raw_rainbow_text;
       runPartB(raw_rainbow_text);
-      console.log(raw_rainbow_text);
+      // console.log(raw_rainbow_text);
 
     } catch (e) { console.log(e); }
   }
@@ -34,8 +34,7 @@ function run() {
       let newDelimiter = /["".?!\n]/
       let phrase_as_array = document.getElementById("phrase").value.split(newDelimiter);
       let rainbow_tokens = originalRainBowText.split(newDelimiter);
-      console.log(phrase_as_array);
-      console.log(rainbow_tokens);
+
       runPartC(rainbow_tokens, phrase_as_array);
 
 
@@ -49,6 +48,13 @@ function run() {
   function runPartC(rainbow_words, seed_phrase_array) {
     console.log(rainbow_words);
     console.log(seed_phrase_array);
+
+    let rainbowLength = rainbow_words.length;
+    let poem_phrase = "";
+    for (let seedPhrase = 0; seedPhrase < seed_phrase_array.length; seedPhrase++) {
+      let
+
+    }
 
     //to next stage
     runPartD(poem_sentence);
