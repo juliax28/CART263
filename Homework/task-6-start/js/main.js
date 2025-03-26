@@ -60,7 +60,6 @@ function run() {
         for (let k = 0; k < rainbowLength; k++) {
           let outputWord = rainbow_words[k];
           let rainbowChar = outputWord.charAt(j);
-
           if (rainbowChar === char) {
             if (poem_sentence === "") {
               poem_sentence += outputWord;
@@ -69,12 +68,11 @@ function run() {
             else {
               poem_sentence = + "" + outputWord;
               break;
+
             }
           }
-          console.log();
+
         }
-
-
       }
 
 
@@ -90,6 +88,10 @@ function run() {
   function runPartD(new_sentence) {
     let outputDiv = document.querySelector("#output");
     outputDiv.style.display = "block";
+    //result is poem_sentence, find each element in the array and then find charAt I guess?
+    outputDiv.innerHTML = runPartC.poem_sentence;
+    // console.log(runPartC(rainbow_words, seed_phrase_array));
+
 
   }
 
