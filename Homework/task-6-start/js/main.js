@@ -16,7 +16,6 @@ function run() {
       document.querySelector("#stepOneButton").style.display = "none";
       document.querySelector("#inputDiv").style.display = "block";
       document.getElementById("rainbow_text").textContent = raw_rainbow_text;
-
       runPartB(raw_rainbow_text);
       console.log(raw_rainbow_text);
 
