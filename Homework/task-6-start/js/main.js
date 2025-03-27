@@ -91,9 +91,23 @@ function run() {
     for (let j = 0; j < new_sentence.length; j++) {
       let letter = new_sentence.charAt(j);
       let letterDiv = document.createElement("div");
+      letterDiv.classList.add("letterPos");
+
       letterDiv.innerHTML = letter;
       letterDiv.style.color = '#' +(Math.random()*0xFFFFFF << 0).toString(16).padStart(6, '0');
+      letterDiv.style.fontSize = Math.random() * 5 + 'em';
+      console.log(letterDiv.style.fontSize);
+      letterDiv.style.left = `${j * 1.5}px`;
+
+    //   requestAnimationFrame(mousemove);
+    //    addEventListener("mousemove", function (e) {
+    //     mouseOffsetX = parseInt(e.clientX);
+    //     mouseOffsetY = parseInt(e.clientY);
+
+    // });
+
       
+      // letterDiv.style.top = `${j * 40}px`;
       // outputDiv.appendChild(letterDiv);
       letterArray.push(letterDiv);
       
