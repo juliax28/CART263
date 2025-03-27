@@ -31,7 +31,7 @@ function run() {
     /* FILL IN HERE */
     function producePoem() {
       //console.log(originalRainBowText);
-      let newDelimiter = /["".?!\n]/
+      let newDelimiter = /[" ".?!\n]/
       let phrase_as_array = document.getElementById("phrase").value.split(newDelimiter);
       let rainbow_tokens = originalRainBowText.split(newDelimiter);
 
