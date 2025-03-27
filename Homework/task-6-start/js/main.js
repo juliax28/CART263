@@ -95,8 +95,9 @@ function run() {
 
       letterDiv.innerHTML = letter;
       letterDiv.style.color = '#' +(Math.random()*0xFFFFFF << 0).toString(16).padStart(6, '0');
-      letterDiv.style.fontSize = Math.random() * 5 + 'em';
-      console.log(letterDiv.style.fontSize);
+      letterDiv.style.fontSize = Math.random() * 3 + 'em';
+      letterDiv.style.fontFamily = "Impact,Charcoal,sans-serif";
+      // console.log(letterDiv.style.fontSize);
       letterDiv.style.left = `${j * 1.5}px`;
 
     //   requestAnimationFrame(mousemove);
