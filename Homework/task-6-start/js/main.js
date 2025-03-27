@@ -45,31 +45,25 @@ function run() {
 
 
   /****** PART C:: POEM CREATION  */
-  function runPartC(rainbow_words, seed_phrase_array) {
+  function runPartC(rainbow_tokens, seed_phrase_array) {
 
 
-
-    let rainbowLength = rainbow_words.length;
     let poem_sentence = "";
-    for (let seedArray = 0; seedArray < seed_phrase_array.length; seedArray++) {
-      let word = seed_phrase_array[seedArray];
-      let wordArrayL = word.length;
-      for (let j = 0; j < wordArrayL; j++) {
-        let char = word.charAt(j);
-        // console.log(char);
-        for (let k = 0; k < rainbowLength; k++) {
-          let outputWord = rainbow_words[k];
-          let rainbowChar = outputWord.charAt(j);
-          if (rainbowChar === char) {
-            if (poem_sentence === "") {
-              poem_sentence += outputWord;
-              break;
-            }
-            else {
-              poem_sentence = + "" + outputWord;
-              break;
 
-            }
+    for (let seedArray = 0; seedArray < seed_phrase_array.length; seedArray++) {
+      let nextWord = seed_phrase_array[seedArray];
+
+      for (let j = 0; j < nextWord.length; j++) {
+        let nextChar = nextWord[j];
+
+        for (let k = 0; k < rainbow_tokens.length; k++) {
+          let outputWord = rainbow_tokens[k];
+
+
+          if (outputWord[j] === nextChar) {
+            poem_sentence += outputWord + "";
+            console.log(poem_sentence);
+            break;
           }
 
         }
@@ -89,7 +83,7 @@ function run() {
     let outputDiv = document.querySelector("#output");
     outputDiv.style.display = "block";
     //result is poem_sentence, find each element in the array and then find charAt I guess?
-    outputDiv.innerHTML = runPartC.poem_sentence;
+    outputDiv.innerHTML = ""
     // console.log(runPartC(rainbow_words, seed_phrase_array));
 
 
