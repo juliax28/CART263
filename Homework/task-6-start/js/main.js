@@ -85,9 +85,15 @@ function run() {
     //result is poem_sentence, find each element in the array and then find charAt I guess?
     outputDiv.innerHTML = new_sentence;
     // console.log(runPartC(rainbow_words, seed_phrase_array));
-
-
+    for (let j = 0; j < new_sentence.length; j++) {
+      let letter = new_sentence.charAt(j);
+      let letterDiv = document.createElement("div");
+      letterDiv.innerHTML = letter;
+      letterDiv.style.color = '#' +(Math.random()*0xFFFFFF << 0).toString(16).padStart(6, '0');
+      outputDiv.appendChild(letterDiv);
+      console.log(letterDiv.style);
   }
+}
 
   /****** PART E:: RESET  */
   function resetPoem() {
