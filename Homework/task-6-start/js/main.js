@@ -83,25 +83,10 @@ function run() {
 
     let outputDiv = document.querySelector("#output");
     outputDiv.style.display = "block";
-    outputDiv.addEventListener("click", animationHandler);
     let isPlaying = false;
-
-    // example takne form task 03, handles start and stop of animation
-    function animationHandler() {
-      if (isPlaying === false) {
-        isPlaying = true;
-
-        //START
-        lettersAnim = window.requestAnimationFrame(animate);
-
-
-      } else {
-        //STOP
-        window.cancelAnimationFrame(lettersAnim);
-        isPlaying = false;
-
-      }
-    }
+    let lettersAnim = null;
+    let speedX = 5;
+    let speedY = 3;
     //result is poem_sentence, find each element in the array and then find charAt I guess?
     outputDiv.innerHTML = new_sentence;
     //letter array
@@ -133,16 +118,54 @@ function run() {
 
     for (let i = 0; i < letterArray.length; i++) {
       outputDiv.appendChild(letterArray[i]);
+    }
 
-      //the animation
-      function animate() {
-        let speedX = 5;
-        let speedY = 3;
-        letterArray[i].style.left += parseInt(letterArray[i].style.left) + speedX + "px";
-        letterArray[i].style.top += parseInt(letterArray[i].style.top) + speedY + "px";
 
+    outputDiv.addEventListener("click", animationHandler);
+
+
+    // example taken form task 03, handles start and stop of animation
+    function animationHandler() {
+      if (isPlaying === false) {
+        isPlaying = true;
+
+        //START
+        lettersAnim = window.requestAnimationFrame(animate);
+
+
+
+      } else {
+        //STOP
+        window.cancelAnimationFrame(lettersAnim);
+        isPlaying = false;
       }
     }
+
+    function animate() {
+      for (let i = 0; i < letterArray.length; i++) {
+        letterArray[i].style.top =
+          parseInt(letterArray[i].style.top) + speedY + "px";
+        letterArray[i].style.left =
+          parseInt(letterArray[i].style.top) + speedX + "px";
+
+      }
+
+      lettersAnim = window.requestAnimationFrame(animate);
+    }
+
+    // //the animation
+    // function animate() {
+    //   console.log(letterDiv);
+    //   letterDiv.style.left += parseInt(letterDiv.style.left) + speedX + "px";
+    //   letterDiv.style.top += parseInt(letterDiv.style.top) + speedY + "px";
+    // }
+
+    // for (let i = 0; i < letterArray.length; i++) {
+    //   // animate the bee array
+    //   letterArray[i].animate();
+
+    // }
+
 
 
   }
