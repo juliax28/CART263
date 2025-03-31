@@ -82,11 +82,14 @@ function run() {
   function runPartD(new_sentence) {
 
     let outputDiv = document.querySelector("#output");
+    let animBoundsDiv = document.querySelector("#input-col");
     outputDiv.style.display = "block";
     let isPlaying = false;
     let lettersAnim = null;
-    let speedX = 5;
-    let speedY = 3;
+    let speedX = Math.random() * 3;
+    let speedY = Math.random() * 5;
+    let animBoundsDivWidth = animBoundsDiv.style.width;
+    let animBoundsDivHeight = animBoundsDiv.style.height;
     //result is poem_sentence, find each element in the array and then find charAt I guess?
     outputDiv.innerHTML = new_sentence;
     //letter array
@@ -112,9 +115,12 @@ function run() {
       letterArray.push(letterDiv);
 
 
+
+
     }
     // deleting the original new sentence string
     outputDiv.innerHTML = "";
+
 
     for (let i = 0; i < letterArray.length; i++) {
       outputDiv.appendChild(letterArray[i]);
@@ -131,6 +137,7 @@ function run() {
 
         //START
         lettersAnim = window.requestAnimationFrame(animate);
+        checkBounds();
 
 
 
@@ -140,13 +147,36 @@ function run() {
         isPlaying = false;
       }
     }
+    function checkBounds() {
+      for (let i = 0; i < letterArray.length; i += 2) {
+        if (parseInt(letterArray[i].style.left) > animBoundsDivWidth) {
+          console.log(animBoundsDivWidth);
+          speedX *= -1;
 
+
+        }
+        else if (parseInt(letterArray[i].style.left) < 0) {
+          speedX *= -1;
+
+        }
+
+        if (parseInt(letterArray[i].style.top) > animBoundsDivHeight) {
+          speedY *= -1;
+
+        }
+        else if (parseInt(letterArray[i].style.top) < 0) {
+          speedY *= -1;
+        }
+      }
+
+    }
     function animate() {
       for (let i = 0; i < letterArray.length; i++) {
         letterArray[i].style.top =
-          parseInt(letterArray[i].style.top) + speedY + "px";
-        letterArray[i].style.left =
           parseInt(letterArray[i].style.top) + speedX + "px";
+        letterArray[i].style.left =
+          parseInt(letterArray[i].style.top) + speedY + "px";
+
 
       }
 
